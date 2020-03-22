@@ -1,0 +1,13 @@
+group 'com.ligz'
+version '1.0-SNAPSHOT'
+
+ext.libs = [
+        spring: [
+                'org.springframework.boot:spring-boot-starter-web'
+        ],
+        utils : [
+                'group: com.alibaba:fastjson:1.1.25',
+                'group: org.springframework.kafka:spring-kafka'
+        ]
+]
+
