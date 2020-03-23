@@ -74,7 +74,8 @@ public class FileUtil {
         File file = null;
         if (multipartFile != null){
             try {
-                file=File.createTempFile("tmp", null);
+                String[] fileName = multipartFile.getOriginalFilename().split("\\.");
+                file=File.createTempFile(fileName[0], "." + fileName[1]);
                 multipartFile.transferTo(file);
                 file.deleteOnExit();
             }catch (Exception e){

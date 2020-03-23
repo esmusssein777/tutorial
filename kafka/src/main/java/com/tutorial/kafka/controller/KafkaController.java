@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 
 @AllArgsConstructor
 @RestController
@@ -23,7 +22,7 @@ public class KafkaController {
     }
 
     @PostMapping("/file")
-    public void uploadHandler(@RequestParam("file") MultipartFile file) throws IOException {
+    public void uploadHandler(@RequestParam("file") MultipartFile file) {
         kafkaSender.sendFile(file);
     }
 }

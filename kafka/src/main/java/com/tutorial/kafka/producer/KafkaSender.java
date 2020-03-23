@@ -43,7 +43,7 @@ public class KafkaSender {
     }
 
     public void sendFile(MultipartFile file) {
-        log.info("------------ FileName=" + file.getName()+file.getSize());
+        log.info("------------ FileName={},FileSize={}", file.getOriginalFilename(), file.getSize());
         String jsonObj = JSON.toJSONString(FileUtil.multipartFile2File(file));
         ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send(TOPIC_FILE, jsonObj);
         future.addCallback(new ListenableFutureCallback<SendResult<String, Object>>() {

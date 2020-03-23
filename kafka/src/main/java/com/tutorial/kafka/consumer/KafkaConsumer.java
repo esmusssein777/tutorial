@@ -37,8 +37,9 @@ public class KafkaConsumer {
             String msg = (String) kafkaMessage.get();
             File file = JSON.parseObject(msg, File.class);
             log.info("+++++++++++++++ Receive:Topic:" + topic);
+            log.info("+++++++++++++++ Receive:File:" + file.getName());
             try {
-                saveFile("QA.pdf", file);
+                saveFile(file.getName(), file);
             } catch (Exception e) {
                 log.error("保存文件失败");
             }
