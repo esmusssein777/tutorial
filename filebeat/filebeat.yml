@@ -1,0 +1,14 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /Users/guangzheng.li/IdeaProjects/tutorial/logs/kafka-tutorial.log
+
+output.kafka:
+  enabled: true
+  hosts: ["192.168.0.100:9092"]
+  topic: topic-log
+  required_acks: 1
+  compression: gzip
+  max_message_bytes: 1000000
+  retry.max: 3

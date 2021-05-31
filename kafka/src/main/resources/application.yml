@@ -26,3 +26,8 @@ spring:
     listener:
       concurrency: 3
       missing-topics-fatal: false
+
+#logging:
+#  # 日志文件配置
+#  file:
+#    name: /Users/guangzheng.li/IdeaProjects/tutorial/logs/${spring.application.name}.log
